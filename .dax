@@ -1,0 +1,15 @@
+Here are some basic dax formula which:
+
+
+Month = FORMAT(Customer_Analysis_Sample[JoinDate],"mmm")
+
+year = YEAR(Customer_Analysis_Sample[JoinDate])
+
+CustomerSegment = IF(Customer_Analysis_Sample[TotalSpend] >= 10000 , "High value" ,
+                   if(Customer_Analysis_Sample[TotalSpend] >=5000 , "Medium value" , "Low Value"))
+
+DaysSinceLastPurchase = DATEDIFF(Customer_Analysis_Sample[LastPurchaseDate], TODAY(), DAY)
+
+AgeGroup = IF(Customer_Analysis_Sample[Age] < 25, "Young",
+    IF(Customer_Analysis_Sample[Age] <= 45, "Adult", "Senior")
+)
